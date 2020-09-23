@@ -126,7 +126,7 @@ def svm_loss_naive(W, X, y, reg):
         # that the loss is being computed.                                    #
         #######################################################################
         # Replace "pass" statement with your code
-        pass
+        dW += X[i] 
         #######################################################################
         #                       END OF YOUR CODE                              #
         #######################################################################
@@ -143,8 +143,8 @@ def svm_loss_naive(W, X, y, reg):
   # TODO:                                                                     #
   # Compute the gradient of the loss function and store it in dW. (part 2)    #
   #############################################################################
-  # Replace "pass" statement with your code
-  pass
+  dW /= num_train
+  dW += reg * torch.sum(W*W)
   #############################################################################
   #                             END OF YOUR CODE                              #
   #############################################################################
